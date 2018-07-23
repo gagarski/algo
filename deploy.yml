@@ -26,7 +26,6 @@
     - { role: cloud-ec2, tags: ['ec2'] }
     - { role: cloud-gce, tags: ['gce'] }
     - { role: cloud-azure, tags: ['azure'] }
-    - { role: cloud-lightsail, tags: ['lightsail'] }
     - { role: cloud-scaleway, tags: ['scaleway'] }
     - { role: cloud-openstack, tags: ['openstack'] }
     - { role: local, tags: ['local'] }
@@ -65,6 +64,7 @@
   roles:
     - { role: dns_adblocking, tags: [ 'dns', 'adblock' ] }
     - { role: ssh_tunneling, tags: [ 'ssh_tunneling' ] }
+    - { role: wireguard, tags: [ 'vpn', 'wireguard' ], when: wireguard_enabled }
     - { role: vpn, tags: [ 'vpn' ] }
 
   post_tasks:
